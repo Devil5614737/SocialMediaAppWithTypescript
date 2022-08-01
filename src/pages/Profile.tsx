@@ -39,7 +39,7 @@ function Profile() {
 
   const handleMyPost = async () => {
     axios
-      .get("http://localhost:4000/api/myPost", {
+      .get("https://socialmediatypescript.herokuapp.com/api/myPost", {
         headers: {
           "x-auth-token": token,
         },
@@ -49,7 +49,7 @@ function Profile() {
   };
   const fetchCurrentUser = async () => {
     axios
-      .get("http://localhost:4000/api/me", {
+      .get("https://socialmediatypescript.herokuapp.com/api/me", {
         headers: {
           "x-auth-token": token,
         },
@@ -70,7 +70,7 @@ function Profile() {
   async function handleRemovePost(postId: string) {
     setFetchProfilePost(true);
   
-    fetch('http://localhost:4000/api/removePost',{
+    fetch('https://socialmediatypescript.herokuapp.com/api/removePost',{
         method:'DELETE',
         body:JSON.stringify({
           postId
@@ -88,7 +88,7 @@ function Profile() {
 
 const updateUsername=(text:string,url:string)=>{
   setFetchProfilePost(true);
-axios.put('http://localhost:4000/api/updateUsername',{username:text?text:user?.username,pic:url},{
+axios.put('https://socialmediatypescript.herokuapp.com/api/updateUsername',{username:text?text:user?.username,pic:url},{
   headers:{
     'x-auth-token':token
   }

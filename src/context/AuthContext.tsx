@@ -27,7 +27,7 @@ function AuthContextProvider({ children }: AuthContextProps) {
   const login = async (email: string, password: string) => {
     setLoading(true)
     try {
-      const { data } = await axios.post("http://localhost:4000/api/login", {
+      const { data } = await axios.post("https://socialmediatypescript.herokuapp.com/api/login", {
         email,
         password,
       });
@@ -53,7 +53,7 @@ function AuthContextProvider({ children }: AuthContextProps) {
   const signup = async (username: string, email: string, password: string) => {
     setLoading(true)
     try {
-      const { data } = await axios.post("http://localhost:4000/api/signup", {
+      const { data } = await axios.post("https://socialmediatypescript.herokuapp.com/api/signup", {
         username,
         email,
         password,
@@ -85,7 +85,7 @@ const user=JSON.parse(localStorage.getItem('currentUser')||'');
 
 
 const fetchUsers=()=>{
-axios.get('http://localhost:4000/api/users',{
+axios.get('https://socialmediatypescript.herokuapp.com/api/users',{
   headers:{
     'x-auth-token':token
   }
@@ -101,7 +101,7 @@ fetchUsers();
 
 
 const searchUsers=(query:string)=>{
-  axios.get(`http://localhost:4000/api/?search=${query}`,{
+  axios.get(`https://socialmediatypescript.herokuapp.com/api/?search=${query}`,{
     headers:{
       'x-auth-token':token
     }
@@ -114,7 +114,7 @@ const searchUsers=(query:string)=>{
 
 
 const addFriend=(userId:string)=>{
-  axios.put('http://localhost:4000/api/addFriend',{userId},{
+  axios.put('https://socialmediatypescript.herokuapp.com/api/addFriend',{userId},{
     headers:{
       'x-auth-token':token
     }

@@ -34,7 +34,7 @@ function Dashboard() {
 
   const fetchAllPosts = async () => {
 
-    const { data } = await axios.get("http://localhost:4000/api/allPost", {
+    const { data } = await axios.get("https://socialmediatypescript.herokuapp.com/api/allPost", {
       headers: {
         "x-auth-token": token,
       },
@@ -56,7 +56,7 @@ function Dashboard() {
  setFetch(true);
     if (text) {
       const { data } = await axios.put(
-        "http://localhost:4000/api/comment",
+        "https://socialmediatypescript.herokuapp.com/api/comment",
         { text, postId },
         {
           headers: {
@@ -72,7 +72,7 @@ function Dashboard() {
     setFetch(true);
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/api/post",
+        "https://socialmediatypescript.herokuapp.com/api/post",
         { caption, photo: url },
         {
           headers: {
@@ -108,7 +108,7 @@ function Dashboard() {
     setFetch(true)
     axios
       .put(
-        "http://localhost:4000/api/unLike",
+        "https://socialmediatypescript.herokuapp.com/api/unLike",
         { postId },
         {
           headers: {
@@ -126,7 +126,7 @@ function Dashboard() {
     setFetch(true)
     axios
       .put(
-        "http://localhost:4000/api/like",
+        "https://socialmediatypescript.herokuapp.com/api/like",
         { postId },
         {
           headers: {

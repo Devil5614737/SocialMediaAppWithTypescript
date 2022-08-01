@@ -14,7 +14,7 @@ const[user,setUser]=useState<User>()
 
 
 const fetchUsers=async()=>{
-  axios.get('http://localhost:4000/api/me',{
+  axios.get('https://socialmediatypescript.herokuapp.com/api/me',{
     headers:{
       'x-auth-token':token
     }
